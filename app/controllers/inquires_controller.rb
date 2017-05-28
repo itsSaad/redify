@@ -1,5 +1,10 @@
 class InquiresController < ApplicationController
   # responds_to :json
+
+  def health_status
+    render json: {message: 'ALIVE'}, status: :ok
+  end
+  
   def find
     val = get_value key
     if val == -1 or val == -2 or !val.present?
