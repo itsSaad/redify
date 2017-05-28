@@ -10,7 +10,7 @@ after_success:
 - docker --version
 - pip install --user awscli
 - export PATH=$PATH:$HOME/.local/bin
-- eval $(aws ecr get-login --region us-east-1)
+- eval $(aws ecr get-login --region eu-west-1)
 - docker build -t redify .
 - docker tag redify:latest 221120016444.dkr.ecr.eu-west-1.amazonaws.com/redify:latest
 - docker push 221120016444.dkr.ecr.eu-west-1.amazonaws.com/redify:latest
