@@ -13,4 +13,4 @@ WORKDIR $APP_DIR
 COPY . $APP_DIR
 RUN bundle install
 EXPOSE 3000
-ENTRYPOINT puma -d
+CMD bundle exec puma -C config/puma.rb
