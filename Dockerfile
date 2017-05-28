@@ -10,7 +10,7 @@ ENV APP_DIR /app
 RUN mkdir -p $APP_DIR
 
 WORKDIR $APP_DIR
-COPY ./redis_app $APP_DIR
+COPY . $APP_DIR
 RUN bundle install
 EXPOSE 3000
 ENTRYPOINT puma -e production -d
