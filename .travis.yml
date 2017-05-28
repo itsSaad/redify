@@ -7,12 +7,14 @@ install:
 script:
 - echo "no tests!"
 after_success:
+- echo env
 - docker --version
 - pip install --user awscli
 - export PATH=$PATH:$HOME/.local/bin
 - eval $(aws ecr get-login --region eu-west-1)
 - docker build -t redify .
 - docker tag redify:latest 221120016444.dkr.ecr.eu-west-1.amazonaws.com/redify:latest
+- docker tag "redify:${TRAVIS_COMMIT}-${TRAVIS_BUILD_NUMBER}" "221120016444.dkr.ecr.eu-west-1.amazonaws.com/redify:${TRAVIS_COMMIT}-${TRAVIS_BUILD_NUMBER}""
 - docker push 221120016444.dkr.ecr.eu-west-1.amazonaws.com/redify:latest
 # env:
 #   AWS_ACCESS_KEY_ID:
