@@ -14,9 +14,9 @@ after_success:
 - export PATH=$PATH:$HOME/.local/bin
 - eval $(aws ecr get-login --region eu-west-1)
 - docker build -t redify .
-- docker tag redify:latest 221120016444.dkr.ecr.eu-west-1.amazonaws.com/redify:latest
-- docker tag "redify:${image_tag}-${TRAVIS_BUILD_NUMBER}" "221120016444.dkr.ecr.eu-west-1.amazonaws.com/redify:${image_tag}-${TRAVIS_BUILD_NUMBER}"
-- docker push 221120016444.dkr.ecr.eu-west-1.amazonaws.com/redify:latest
+- docker tag redify:latest 835758684042.dkr.ecr.eu-west-1.amazonaws.com/redify:latest
+- docker tag "redify:${image_tag}-${TRAVIS_BUILD_NUMBER}" "835758684042.dkr.ecr.eu-west-1.amazonaws.com/redify:${image_tag}-${TRAVIS_BUILD_NUMBER}"
+- docker push 835758684042.dkr.ecr.eu-west-1.amazonaws.com/redify:latest
 # env:
 #   AWS_ACCESS_KEY_ID:
 #     secure: QyZkCdZP8mdsPx3lRyGA/M3EdANmm2DklTjUoxfTQIVomyYg+fRBgrcS1KcLpWMMaGl3+fb+GTizGNGgsQkfylJzRzq5zO23xuVAG5q+rNxwmcpTRxAHsNF6l8FXrA+qjik8tx/5hHGUdl505BjV2NYNjH97JVYd8dQIfKsB/XTOfaxqceSXm0FmX7YE+Eb2nc3NSRew+RNNy5RSUTrULAWtIF3UZV7ZT9uYe4t7Xjx22U7BhVxogta+di9uUFWJZy9X9kFJkOra3H3hyDBqJYOPJgLE5qLp/4KZwv2PP5eAONB7axoyxVqUtyv7u1TObX+ekKVAvJq7FWOiW9UPgY5TqR8wDPR2EJVS0/XQs2bxZjr/OeWFuB0NsZc6DUxx0c/ohsyPU5hNPFpWXtH+/yUrcnZNDOKmRWkcK3xikAsbzRXAEJvEQLlOVi3G/298RZEa1DkXPoUSRMyvAbfr1Pb3kC3TQlcVIEEGPBqBN/sjPfkQbElMWr0mTVUlruvlZNNnvSkZH07rgJ/qv4Tx5pVkUNibvebVtolhV1LnHSGWBJuyudX2qKqSQ8828Mpbz+X4RLVHPqYUrzbJGQWMoVFonbnL6gj7THDqosUfufD4suN23z9/Pt7fWtdwFEVy+XQsS6cfStId1jT6N43iEG8KbJBhQgrt0WVBzZYBJpw=
