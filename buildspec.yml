@@ -1,16 +1,18 @@
+---
 version: 0.2
-
 phases:
   install:
     commands:
-      - echo Installing RSpec...
       - gem install bundler
-      - bundle install
+      - RAILS_ENV=development bundle install
+      # - gem install rspec
   build:
     commands:
-      - echo Build started on `date`
-      - echo Compiling the Ruby code...
-      - rspec
+      - 'echo Build started on `date`'
+      - 'env'
+      - 'echo "Current PATH: ${PATH}"'
+      - "ls -la ${BUNDLE_PATH}/bin"
+      - "${BUNDLE_PATH}/bin/rspec -f RspecJunitFormatter -o spec/reports/rspec.xml spec"
   post_build:
     commands:
       - echo Build completed on `date`
